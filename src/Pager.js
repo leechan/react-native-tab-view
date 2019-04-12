@@ -261,7 +261,7 @@ export default class Pager<T: Route> extends React.Component<Props<T>> {
       ? Math.abs(translateX / this.props.layout.width)
       : this.props.navigationState.index;
 
-    this._positionListeners.forEach(listener => listener(value));
+    this._positionListeners.forEach(listener => listener(value, translateX / this.props.layout.width));
   };
 
   _transitionTo = (index: Animated.Node<number>) => {
